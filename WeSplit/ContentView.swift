@@ -11,7 +11,7 @@ struct ContentView: View {
     @State var tagihan : Double? = nil
     @State var jumlahOrang : Int? = nil
     @State var tip : Double? = nil
-    @State var totalperorang : Double? = nil
+    @State var totalperorang : Double = 0
     var body: some View {
         NavigationStack{
             VStack(alignment:.leading){
@@ -25,7 +25,7 @@ struct ContentView: View {
                                 TextField("Tip(%)",value: $tip, format: .number).keyboardType(.decimalPad)
                             }
                             Section(header: Text("Total per orangan")) {
-                                TextField("Rp.xxx",value: $totalperorang, format: .number).keyboardType(.decimalPad).disabled(true)
+                                Text("Rp.xxx")
                             }
                         }
                     }.frame(maxWidth: .infinity,alignment: .leading)
